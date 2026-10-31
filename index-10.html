@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nur Jwellers | Gold & Silver Ornaments</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--maroon:#3b0a14;--maroon2:#5a0f1f;--deep:#220509;--gold:#d4af37;--gold2:#f3d98b;--text:#f7ecd9}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:var(--deep);color:var(--text);overflow-x:hidden}
+h1,h2,h3,.logo{font-family:'Cinzel',serif}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:14px 6%;background:rgba(34,5,9,.85);backdrop-filter:blur(8px);z-index:50;border-bottom:1px solid rgba(212,175,55,.25)}
+.logo{font-size:1.4rem;color:var(--gold);letter-spacing:2px}
+nav ul{display:flex;gap:26px;list-style:none;font-size:.9rem}
+nav ul a:hover{color:var(--gold)}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 6% 40px;background:radial-gradient(ellipse 90% 70% at 50% 30%,var(--maroon2),var(--deep) 100%);position:relative;overflow:hidden}
+.hero h1{font-size:clamp(2.4rem,7vw,5rem);background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.hero p{margin:16px 0 30px;font-weight:300;letter-spacing:3px;opacity:.9}
+.btn{display:inline-block;padding:12px 30px;border:1px solid var(--gold);color:var(--gold);border-radius:40px;transition:.3s;margin:5px}
+.btn:hover,.btn.fill{background:var(--gold);color:var(--deep)}
+.ring{width:130px;height:130px;position:relative;margin-bottom:20px;animation:float 4s ease-in-out infinite}
+.ring svg{width:100%;height:100%;filter:drop-shadow(0 0 18px rgba(212,175,55,.6))}
+@keyframes float{50%{transform:translateY(-18px) rotate(6deg)}}
+.spark{position:absolute;color:var(--gold2);animation:twinkle 3s infinite;pointer-events:none}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.3) rotate(0)}50%{opacity:1;transform:scale(1) rotate(90deg)}}
+section{padding:48px 6%}
+.title{text-align:center;font-size:clamp(1.7rem,4vw,2.6rem);color:var(--gold);margin-bottom:10px}
+.sub{text-align:center;opacity:.75;margin-bottom:26px;font-weight:300}
+.title:after{content:"";display:block;width:90px;height:2px;margin:12px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.rates{background:linear-gradient(to bottom,var(--deep) 0%,var(--maroon) 28%,var(--maroon) 72%,var(--deep) 100%)}
+.rate-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:900px;margin:auto}
+.rate{background:linear-gradient(145deg,var(--maroon2),var(--deep));border:1px solid rgba(212,175,55,.4);border-radius:18px;padding:28px;text-align:center;transition:.4s}
+.rate:hover{transform:translateY(-8px);box-shadow:0 12px 30px rgba(212,175,55,.2)}
+.rate h3{color:var(--gold2);margin-bottom:8px}
+.rate .price{font-size:2rem;font-weight:500}
+.rate small{opacity:.7;display:block;margin-top:6px}
+.live{display:inline-block;width:9px;height:9px;background:#3ddc84;border-radius:50%;margin-right:6px;animation:pulse 1.4s infinite}
+@keyframes pulse{50%{opacity:.2}}
+#rateStatus{text-align:center;margin-top:22px;font-size:.85rem;opacity:.8}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:820px;margin:auto}
+.item{aspect-ratio:4/3;border-radius:16px;overflow:hidden;position:relative;border:1px solid rgba(212,175,55,.35);background:linear-gradient(145deg,var(--maroon2),var(--deep));display:flex;align-items:center;justify-content:center;transition:.4s;cursor:pointer}
+.item:hover{transform:scale(1.05) rotate(-1deg);box-shadow:0 0 28px rgba(212,175,55,.35)}
+.item img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.item span{position:absolute;z-index:0;color:var(--gold);font-size:.8rem;opacity:.6;text-align:center}
+.more{text-align:center;margin-top:28px;font-size:1.15rem;color:var(--gold2)}
+.mapbox{max-width:1000px;margin:26px auto 0;border-radius:18px;overflow:hidden;border:2px solid var(--gold);height:380px}
+.mapbox{background:var(--maroon2) center/cover;display:flex;align-items:center;justify-content:center}.mapbox iframe{width:100%;height:100%;border:0}
+.contact{background:linear-gradient(to bottom,var(--deep) 0%,var(--maroon) 28%,var(--maroon) 72%,var(--deep) 100%)}
+.cwrap{max-width:900px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.card{padding:26px;text-align:center;border:1px solid rgba(212,175,55,.4);border-radius:16px;background:var(--deep);transition:.3s}
+.card:hover{background:var(--maroon2);transform:translateY(-6px)}
+.card b{display:block;color:var(--gold);margin-bottom:6px;font-family:'Cinzel',serif}
+.social{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.social a{padding:11px 26px;border-radius:40px;font-weight:500;transition:.3s;color:#fff}
+.social a:hover{transform:translateY(-4px) scale(1.05)}
+.wa{background:#25d366}.ig{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888)}.fb{background:#1877f2}.cl{background:var(--gold);color:var(--deep)!important}
+footer{text-align:center;padding:28px 6%;background:#150306;border-top:1px solid rgba(212,175,55,.25);font-size:.88rem}
+footer b{color:var(--gold)}
+.reveal{opacity:0;transform:translateY(40px);transition:1s}
+.reveal.show{opacity:1;transform:none}
+@media(max-width:700px){nav ul{display:none}}
+
+.hero>*{position:relative;z-index:2}.hero>.spark{position:absolute;z-index:0}
+.item em{position:absolute;z-index:2;bottom:0;left:0;right:0;padding:26px 10px 10px;font-style:normal;font-family:'Cinzel',serif;text-align:center;background:linear-gradient(transparent,rgba(34,5,9,.92));color:var(--gold2);font-size:.95rem}
+.mapwrap{display:grid;grid-template-columns:1fr 2fr;max-width:1100px;margin:auto;border:2px solid var(--gold);border-radius:22px;overflow:hidden;box-shadow:0 0 40px rgba(212,175,55,.25)}
+.mapinfo{padding:34px;background:linear-gradient(160deg,var(--maroon2),var(--deep));display:flex;flex-direction:column;justify-content:center;gap:14px}
+.mapinfo h3{color:var(--gold);font-size:1.5rem}.mapinfo p{opacity:.85;font-weight:300}
+.mapwrap .mapbox{margin:0;border:0;border-radius:0;height:440px;max-width:none}
+.cwrap{max-width:1000px!important}
+.cbtn{display:inline-block;margin-top:14px;padding:9px 26px;border-radius:30px;color:#fff;font-weight:500;transition:.3s}.cbtn:hover{transform:scale(1.08)}
+.modal{position:fixed;inset:0;background:rgba(10,0,3,.88);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+.modal.open{display:flex;animation:fade .3s}@keyframes fade{from{opacity:0;transform:scale(.95)}}
+.mbox{background:var(--maroon);border:2px solid var(--gold);border-radius:20px;max-width:780px;width:100%;display:grid;grid-template-columns:1fr 1fr;position:relative;max-height:90vh;overflow-y:auto}
+.mimg{background:var(--deep);min-height:280px;display:flex;align-items:center;justify-content:center;color:var(--gold);opacity:.95}.mimg img{width:100%;height:100%;object-fit:cover}
+.mtxt{padding:30px}.mtxt h3{color:var(--gold);font-size:1.5rem;margin-bottom:10px}.mtxt ul{list-style:none;margin:14px 0 20px}.mtxt li{padding:5px 0;border-bottom:1px solid rgba(212,175,55,.2);font-size:.92rem}
+.mclose{position:absolute;top:6px;right:14px;background:none;border:0;color:var(--gold);font-size:2rem;cursor:pointer;z-index:3}
+@media(max-width:800px){.mapwrap,.mbox{grid-template-columns:1fr}.mapwrap .mapbox{height:320px}}
+@media(max-width:480px){.gallery{gap:10px}.item em{font-size:.75rem}}
+.brandwrap{display:flex;align-items:center;gap:12px}
+.lgc{width:42px;height:42px;border-radius:50%;border:2px solid var(--gold);background:var(--maroon2);overflow:hidden;flex-shrink:0}.lgc img{width:100%;height:100%;object-fit:cover;display:block}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:nowrap}.btns .btn{margin:0;padding:12px 26px;white-space:nowrap}
+@media(max-width:480px){.btns{gap:8px}.btns .btn{padding:11px 16px;font-size:.85rem}.logo{font-size:1.1rem}}
+.navbtn{padding:9px 20px;border-radius:30px;background:var(--gold);color:var(--deep);font-weight:500;font-size:.85rem;white-space:nowrap;transition:.3s;animation:glowb 2.5s ease-in-out infinite}
+.navbtn:hover{transform:scale(1.07)}
+@keyframes glowb{50%{box-shadow:0 0 16px rgba(212,175,55,.7)}}
+@media(max-width:480px){nav{padding:12px 4%}.navbtn{padding:8px 14px;font-size:.78rem}}
+.btn.solid{background:var(--maroon2);box-shadow:0 4px 14px rgba(0,0,0,.35)}.btn.solid:hover{background:var(--gold);color:var(--deep)}
+.rate-us{padding:36px 6%}
+.stars{text-align:center;font-size:2.4rem;color:var(--gold);margin-bottom:22px;letter-spacing:6px}
+.stars span{display:inline-block;animation:starpop 2.4s ease-in-out infinite;text-shadow:0 0 14px rgba(212,175,55,.6)}
+.stars span:nth-child(2){animation-delay:.2s}.stars span:nth-child(3){animation-delay:.4s}.stars span:nth-child(4){animation-delay:.6s}.stars span:nth-child(5){animation-delay:.8s}
+@keyframes starpop{0%,60%,100%{transform:scale(1)}30%{transform:scale(1.3) rotate(12deg)}}
+</style>
+</head>
+<body>
+<nav><div class="brandwrap"><div class="lgc"><img src="nurlogo.png" alt="" onerror="this.style.display='none'"></div><div class="logo">NUR JWELLERS</div></div>
+<ul><li><a href="#rates">Rates</a></li><li><a href="#collection">Collection</a></li><li><a href="#visit">Visit</a></li></ul><a class="navbtn" href="#contact">Contact Us</a></nav>
+
+<header class="hero" id="home">
+<div class="ring"><svg viewBox="0 0 100 100" fill="none" stroke="#d4af37" stroke-width="4"><circle cx="50" cy="62" r="26"/><circle cx="50" cy="62" r="19" stroke-width="2" opacity=".6"/><path d="M40 30l10-14 10 14-10 12z" fill="#f3d98b"/></svg></div>
+<h1>Nur Jwellers</h1>
+<p>TIMELESS GOLD &bull; PURE SILVER &bull; TRUSTED CRAFT</p>
+<div class="btns"><a class="btn fill" href="#collection">View Collection</a><a class="btn solid" href="#rates">Today's Rates</a></div>
+</header>
+
+<section class="rates reveal" id="rates">
+<h2 class="title">Live Gold &amp; Silver Rates</h2>
+<p class="sub"><span class="live"></span>Updated every time you refresh</p>
+<div class="rate-grid">
+<div class="rate"><h3>Gold 24K</h3><div class="price" id="g24">Loading...</div><small>per 1 gram</small></div>
+<div class="rate"><h3>Gold 22K</h3><div class="price" id="g22">Loading...</div><small>per 1 gram</small></div>
+<div class="rate"><h3>Silver</h3><div class="price" id="sil">Loading...</div><small>per 1 gram</small></div>
+</div>
+<p id="rateStatus"></p>
+</section>
+
+<section class="reveal" id="collection">
+<h2 class="title">Our Collection</h2>
+<p class="sub">A glimpse of our exquisite ornaments</p>
+<div class="gallery" id="gallery"></div>
+<p class="more">To view more, visit our shop <b>Nur Jwellers</b></p>
+</section>
+
+<section class="reveal" id="visit">
+<h2 class="title">Visit Our Shop</h2>
+<p class="sub">Come and experience our collection in person</p>
+<div class="mapwrap">
+<div class="mapinfo"><h3>Nur Jwellers</h3><p>Station Rd, opposite PNB ATM, Singur Bazar, Singur, West Bengal 712409</p><p>Mon - Sat: 10 AM - 8 PM</p><div><a class="btn fill" target="_blank" rel="noopener" href="https://maps.app.goo.gl/nqnPcWNHAvdakzJu7?g_st=ac">Get Directions</a></div></div>
+<div class="mapbox"><iframe id="mapFrame" loading="lazy" src="https://maps.google.com/maps?q=Nur+Jewellers+Singur+Bazar+Singur+West+Bengal&hl=en&z=17&ftid=0x39f8890077994883:0x21223aaa64f5eba8&output=embed" title="Nur Jwellers location"></iframe></div>
+</div>
+</section>
+
+<section class="rate-us reveal" id="review">
+<h2 class="title">Rate Us on Google</h2>
+<p class="sub">Enjoyed shopping with us? Your review means a lot</p>
+<div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+<div style="text-align:center"><a class="btn fill" target="_blank" rel="noopener" href="https://share.google/n6TUF4QTawHxSpwY7">Rate Us on Google</a></div>
+</section>
+
+<section class="contact reveal" id="contact">
+<h2 class="title">Contact Us</h2>
+<p class="sub">We would love to hear from you</p>
+<div class="cwrap">
+<div class="card"><b>Call</b><p>+91 62932 02262</p><a class="cbtn cl" style="color:var(--deep)" href="tel:+916293202262">Call Now</a></div>
+<div class="card"><b>WhatsApp</b><p>Chat with us anytime</p><a class="cbtn wa" href="https://wa.me/916293202262" target="_blank" rel="noopener">WhatsApp</a></div>
+<div class="card"><b>Instagram</b><p>@sk.niyamot.12</p><a class="cbtn ig" href="https://www.instagram.com/sk.niyamot.12" target="_blank" rel="noopener">Follow Us</a></div>
+<div class="card"><b>Facebook</b><p>Nur Jwellers</p><a class="cbtn fb" href="https://www.facebook.com/share/1BqmChPhx3/" target="_blank" rel="noopener">Visit Page</a></div>
+<div class="card"><b>Address</b><p>Station Rd, opposite PNB ATM, Singur Bazar, Singur, West Bengal 712409</p><a class="cbtn cl" style="color:var(--deep)" href="https://maps.app.goo.gl/nqnPcWNHAvdakzJu7?g_st=ac" target="_blank" rel="noopener">Get Directions</a></div>
+<div class="card"><b>Hours</b><p>Mon - Sat: 10 AM - 8 PM</p></div>
+</div>
+</section>
+
+<div class="modal" id="modal"><div class="mbox"><button class="mclose" id="mclose">&times;</button><div class="mimg" id="mimg"></div><div class="mtxt"><h3 id="mt"></h3><p id="md"></p><ul id="ml"></ul><a class="btn fill" target="_blank" rel="noopener" href="https://wa.me/916293202262">Enquire on WhatsApp</a></div></div></div>
+
+<footer>&copy; <span id="yr"></span> Nur Jwellers. All rights reserved.<br>Designed and developed by <b>Maity DigiWorks</b></footer>
+
+<script>
+// 4 ornament photos: nur1.jpg ... nur4.jpg in the same folder as index.html
+var items=[
+["Earrings","Beautiful handcrafted earrings with fine detailing, perfect for weddings, festivals and gifting.","22K Gold","Weddings & festivals"],
+["Earrings","Elegant earrings in classic and modern designs, light to wear and made to shine.","22K Gold","Daily & occasion wear"],
+["Bangles","Graceful bangles with a smooth, polished finish, available in multiple sizes and designs.","22K Gold","Weddings & festivals"],
+["Bangles","Traditional bangles crafted with care, a timeless piece for every occasion.","22K Gold","Daily & occasion wear"]];
+var g=document.getElementById('gallery'),modal=document.getElementById('modal');
+items.forEach(function(it,k){var n=k+1,d=document.createElement('div');d.className='item';d.innerHTML='<span>Photo '+n+'</span><img src="nur'+n+'.jpg" alt="'+it[0]+'" onerror="this.style.display=\'none\'"><em>'+it[0]+'</em>';d.onclick=function(){openM(k)};g.appendChild(d);});
+function openM(k){var it=items[k],n=k+1;document.getElementById('mimg').innerHTML='<img src="nur'+n+'.jpg" alt="'+it[0]+'" onerror="this.outerHTML=\'<span>Photo '+n+'</span>\'">';document.getElementById('mt').textContent=it[0];document.getElementById('md').textContent=it[1];document.getElementById('ml').innerHTML='<li>Purity: '+it[2]+'</li><li>Best for: '+it[3]+'</li><li>Making charges: Visit the shop</li><li>Hallmarked and certified</li>';modal.classList.add('open');}
+function closeM(){modal.classList.remove('open')}
+document.getElementById('mclose').onclick=closeM;modal.onclick=function(e){if(e.target===modal)closeM()};document.onkeydown=function(e){if(e.key==='Escape')closeM()};
+document.getElementById('yr').textContent=new Date().getFullYear();
+// sparkles
+var hero=document.getElementById('home');
+var cols=5,rows=5,idx=0;
+for(var r=0;r<rows;r++){for(var c=0;c<cols;c++){
+if(r>=1&&r<=3&&c>=1&&c<=3)continue;
+var e=document.createElement('div');e.className='spark';e.textContent=['✦','◆','✧'][idx%3];
+e.style.left=(c*100/cols+Math.random()*100/cols*.6+4)+'%';e.style.top=(r*100/rows+Math.random()*100/rows*.6+3)+'%';
+e.style.fontSize=(10+Math.random()*8)+'px';e.style.animationDelay=(idx*0.45)+'s';e.style.animationDuration='4s';idx++;hero.appendChild(e);}}
+// reveal on scroll
+var io=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting)x.target.classList.add('show')})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+// live rates (fetched fresh on every load)
+function inr(n){return '₹'+Math.round(n).toLocaleString('en-IN')}
+async function loadRates(){
+var st=document.getElementById('rateStatus');
+try{
+var r=await Promise.all([fetch('https://api.gold-api.com/price/XAU'),fetch('https://api.gold-api.com/price/XAG'),fetch('https://open.er-api.com/v6/latest/USD')]);
+var xau=await r[0].json(),xag=await r[1].json(),fx=await r[2].json();
+var usd=fx.rates.INR,oz=31.1035;
+var g24=xau.price/oz*usd,sil=xag.price/oz*usd;
+document.getElementById('g24').textContent=inr(g24);
+document.getElementById('g22').textContent=inr(g24*22/24);
+document.getElementById('sil').textContent='₹'+sil.toFixed(2);
+st.textContent='International spot rate converted to INR. Updated '+new Date().toLocaleTimeString()+'. Local shop rates may differ slightly (taxes/making charges extra).';
+}catch(e){
+['g24','g22','sil'].forEach(function(id){document.getElementById(id).textContent='Unavailable'});
+st.textContent='Could not fetch live rates. Please refresh or call the shop.';
+}}
+loadRates();
+</script>
+</body>
+</html>
